@@ -1,0 +1,107 @@
+import java.util.Scanner;
+public class PagoPersonal {
+    static double CalcularPagoPolo(int [] horas){
+
+        double suma=0;
+
+        //Rendimiento de las 10 operaciones
+        double union_hombro  = 4.16;
+        double cerrado_cuello  = 1.25;
+        double pegado_cuello  = 5.81;
+        double tapete_hombro  = 5.00;
+        double basta_manga  = 4.16;
+        double pegar_manga  = 7.12;
+        double cerrado_costado  = 8.33;
+        double atraque_puño  = 5.00;
+        double basta_faldon  = 5.0;
+        double inspeccion  = 8.33;
+
+        if(horas[0]!=0) {
+            suma += horas[0]*union_hombro;
+        }
+        if(horas[1]!=0) {
+            suma += horas[0]*cerrado_cuello;
+        }
+        if(horas[2]!=0) {
+            suma += horas[0]*pegado_cuello;
+        }
+        if(horas[3]!=0) {
+            suma += horas[0]*tapete_hombro;
+        }
+        if(horas[4]!=0) {
+            suma += horas[0]*basta_manga;
+        }
+        if(horas[5]!=0) {
+            suma += horas[0]*pegar_manga;
+        }
+        if(horas[6]!=0) {
+            suma += horas[0]*cerrado_costado;
+        }
+        if(horas[7]!=0) {
+            suma += horas[0]*atraque_puño;
+        }
+        if(horas[8]!=0) {
+            suma += horas[0]*basta_faldon;
+        }
+        if(horas[9]!=0) {
+            suma += horas[0]*inspeccion;
+        }
+
+        return suma;
+    }
+
+	/*
+	static double CalcularPagoPantalon(int dias_adicion){
+        double pago_total = 5;
+        for(int i=2; i<=dias_adicion; i++){
+            pago_total= pago_total+ pago_total*2/100;
+        }
+        return pago_total;
+    }
+
+	static double CalcularPagoPolera(int dias_adicion){
+        double pago_total = 5;
+        for(int i=2; i<=dias_adicion; i++){
+            pago_total= pago_total+ pago_total*2/100;
+        }
+        return pago_total;
+    }
+
+	static double CalcularPagoBoxer(int dias_adicion){
+        double pago_total = 5;
+        for(int i=2; i<=dias_adicion; i++){
+            pago_total= pago_total+ pago_total*2/100;
+        }
+        return pago_total;
+    }
+	*/
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int polo[] = new int[10];
+        String nombre_oper_polo[] = new String[10];
+
+        nombre_oper_polo[0] = "union de hombro";
+        nombre_oper_polo[1] = "cerrado de cuello";
+        nombre_oper_polo[2] = "pegado de cuello";
+        nombre_oper_polo[3] = "tapete de hombro";
+        nombre_oper_polo[4] = "basta de manga";
+        nombre_oper_polo[5] = "pegar manga";
+        nombre_oper_polo[6] = "cerrado de costado";
+        nombre_oper_polo[7] = "atraque de puño";
+        nombre_oper_polo[8] = "basta faldon";
+        nombre_oper_polo[9] = "inspeccion";
+
+        for (int i = 0; i < polo.length; i++) {
+            System.out.println("Ingrese las horas laboradas en hacer polos en la operacion "+ nombre_oper_polo[i]);
+            polo[i] = sc.nextInt();
+        }
+
+        double result = CalcularPagoPolo(polo);
+        System.out.println("El pago total por el trabajo en polos es "+ result);
+
+
+    }
+}
